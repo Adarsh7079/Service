@@ -87,6 +87,33 @@ const dataHome = [
     price: `109`,
   },
 ];
+
+const dataImage=[
+  {
+    img:`./elec.png`,
+    url:`www.google.com`
+  },
+  {
+    img:`./cleaning.png`,
+    url:`www.google.com`
+  },
+   {
+    img:`./elec.png`,
+    url:`www.google.com`
+  },
+  {
+    img:`./cleaning.png`,
+    url:`www.google.com`
+  },
+  {
+    img:`./elec.png`,
+    url:`www.google.com`
+  },
+  {
+    img:`./cleaning.png`,
+    url:`www.google.com`
+  }
+]
 const Main = () => {
   const settings = {
     // dots: true,
@@ -135,24 +162,25 @@ const Main = () => {
               <div className="text-lg font-semibold text-gray-600">
                 What are you looking for?
               </div>
-              <div className="w-full flex flex-wrap gap-5 ">
-                {Array(9)
-                  .fill()
-                  .map((_, i) => (
-                    <div
-                      key={i}
-                      className="flex flex-col gap-2 items-center w-1/2 sm:w-1/3 md:w-auto"
-                    >
-                      <img
-                        src="./cleaning.png"
-                        alt=""
-                        className="w-[130px] h-[80px] rounded-md"
-                      />
-                      <div className="w-[100px] text-sm text-center">
-                        <h1 className="text-center">Cleaning & Pest Control</h1>
-                      </div>
-                    </div>
-                  ))}
+              <div className="w-full flex flex-wrap ">
+               {
+                dataImage.map((data)=>(
+                  <a url={data.url}
+                  className="flex flex-col gap-2 items-center w-1/2 sm:w-1/3 md:w-auto p-2 cursor-pointer 
+                  hover:border-b-[2px] border-blue-400">
+                  <img
+                    src={data.img}
+                    alt=""
+                    className="w-[130px] h-[80px] rounded-md"
+                  />
+                  <div className="w-[100px] text-sm text-center">
+                    <h1 className="text-center">Cleaning & Pest Control</h1>
+                  </div>
+                </a>
+                ))
+               }
+               
+                
               </div>
             </div>
           </div>
