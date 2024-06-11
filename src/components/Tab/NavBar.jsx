@@ -36,12 +36,12 @@ const NavBar = () => {
 
       {/* Mobile */}
       <nav className=" md:hidden   relative">
-        <div className=" w-full px-10 flex justify-between">
+        <div className=" w-full p-5 flex justify-between items-center">
         <div>
           <img src="./uc.svg" alt="" className="w-[150px] h-[50px]" />
         </div>
         <div
-          className=" text-3xl cursor-pointer"
+          className=" text-3xl cursor-pointer "
           onClick={(e) => setOpne(!isOpen)}
         >
           &#9776;
