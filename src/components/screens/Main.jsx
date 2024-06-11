@@ -125,7 +125,7 @@ const Main = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 3,
           infinite: true,
           dots: true,
@@ -209,15 +209,15 @@ const Main = () => {
       </section>
 
       {/* Our Services */}
-      <section className=" w-full md:w-2/3 flex flex-col mx-auto py-20">
+      <section className=" w-full md:w-2/3 flex flex-col mx-auto py-20 ">
         <div className="   underline text-5xl font-semibold r">
           <h1>Our Services</h1>
         </div>
         <Slider {...settings}>
           {data.map((d) => (
             <div className="  py-10">
-              <div className="  rounded-xl w-[300px] flex justify-center items-center">
-                <img src={d.img} className=" w-full h-[300px] rounded-xl" />
+              <div className="  rounded-xl md:w-[300px] w-full flex justify-center items-center">
+                <img src={d.img} className=" w-full h-[300px]  rounded-xl" />
               </div>
               <div className=" mt-2 ">
                 <p className=" text-lg font-semibold">{d.name}</p>
@@ -245,12 +245,12 @@ const Main = () => {
         <Slider {...settings}>
           {dataAc.map((d) => (
             <div className="  ">
-              <div className="w-[300px] hover:border-[1px] border-gray-600 rounded-md ">
+              <div className="md:w-[300px] w-full hover:border-[1px] border-gray-600 rounded-md ">
                 <div className=" mt-2  top-0 ">
                   <p className=" text-lg font-semibold p-5">{d.name}</p>
                 </div>
                 <div className="  rounded-xl  flex justify-center items-center">
-                  <img src={d.img} className=" w-full rounded-xl" />
+                  <img src={d.img} className=" w-full h-[300px] rounded-xl" />
                 </div>
               </div>
             </div>
@@ -266,7 +266,7 @@ const Main = () => {
         <Slider {...settings}>
           {dataHome.map((d) => (
             <div className=" relative py-10 pb-10">
-              <div className="  rounded-xl w-[300px] flex justify-center items-center">
+              <div className="  rounded-xl md:w-[300px] w-full flex justify-center items-center">
                 <img src={d.img} className=" w-full h-[300px] rounded-xl" />
               </div>
               <div className=" mt-2  ">
