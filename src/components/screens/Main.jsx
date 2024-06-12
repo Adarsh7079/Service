@@ -7,31 +7,39 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Main.css";
 
 import { Discount } from "../index";
+import { Link, Outlet } from "react-router-dom";
+
 
 const data = [
   {
     img: `./painter.jpeg`,
-    name: "Pinater",
+    name: `Panater`,
+    url:`/painter`
   },
   {
     img: `./sofaclean.jpeg`,
-    name: "Cleaning",
+    name: `Cleaning`,
+    url:`/sofa`
   },
   {
     img: `./door.jpeg`,
     name: `Door`,
+    url:`/carpenter`
   },
   {
     img: `./painter.jpeg`,
-    name: "Painter",
+    name: `Painter`,
+     url:`/painter`
   },
   {
     img: `./sofaclean.jpeg`,
-    name: "Cleaning",
+    name: `Cleaning`,
+     url:`/sofa`
   },
   {
     img: `./door.jpeg`,
     name: `Door Lock`,
+    url:`/carpenter`
   },
 ];
 const dataAc = [
@@ -91,27 +99,33 @@ const dataHome = [
 const dataImage=[
   {
     img:`./elec.png`,
-    url:`www.google.com`
+    url:`./electrician`,
+    name:`Electrician`
   },
   {
     img:`./cleaning.png`,
-    url:`www.google.com`
+   url:`./painter`,
+    name:`painter`
   },
    {
     img:`./elec.png`,
-    url:`www.google.com`
+    url:`./painter`,
+    name:`painter`
   },
   {
     img:`./cleaning.png`,
-    url:`www.google.com`
+   url:`./painter`,
+    name:`painter`
   },
   {
     img:`./elec.png`,
-    url:`www.google.com`
+    url:`./painter`,
+    name:`painter`
   },
   {
     img:`./cleaning.png`,
-    url:`www.google.com`
+   url:`./painter`,
+    name:`painter`
   }
 ]
 const Main = () => {
@@ -165,18 +179,22 @@ const Main = () => {
               <div className="w-full flex flex-wrap ">
                {
                 dataImage.map((data)=>(
-                  <a url={data.url}
+                 
+                  <Link 
+                  to={data.url}
                   className="flex flex-col gap-2 items-center w-1/2 sm:w-1/3 md:w-auto p-2 cursor-pointer 
                   hover:border-b-[2px] border-blue-400">
+                  
                   <img
                     src={data.img}
                     alt=""
                     className="w-[130px] h-[80px] rounded-md"
                   />
                   <div className="w-[100px] text-sm text-center">
-                    <h1 className="text-center">Cleaning & Pest Control</h1>
+                    <h1 className="text-center">{data.name}</h1>
                   </div>
-                </a>
+                 
+                </Link>
                 ))
                }
                
@@ -271,12 +289,15 @@ const Main = () => {
               </div>
               <div className=" mt-2  ">
                 <p className=" text-lg font-semibold">{d.name}</p>
-                <p className=" text-sm"> &#8377;{d.price}</p>
+                <p className=" text<NavBar/>-sm"> &#8377;{d.price}</p>
               </div>
             </div>
           ))}
         </Slider>
       </section>
+ 
+     
+     
     </div>
   );
 };
